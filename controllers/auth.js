@@ -46,6 +46,8 @@ const login = async (req, res = response)=>{
             return res.status(404).json({ok:false,msg:'Email no se encontro'});
         }
         //Validar el password
+        console.log(password);
+        console.log(usuarioDB.password);
         const validPassword = bcrypt.compareSync(password,usuarioDB.password);
         if(!validPassword){
             return res.status(404).json({ok:false,msg:'La contraseña no es valida'});
