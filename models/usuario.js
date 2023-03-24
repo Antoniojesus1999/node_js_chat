@@ -25,6 +25,7 @@ const UsuariosSchema = Schema({
 UsuariosSchema.method('toJSON', function() {
     const {__v, _id, password, ...object } = this.toObject();
     object.uid = _id;
+    console.log(object);
     return object;
 })
 
