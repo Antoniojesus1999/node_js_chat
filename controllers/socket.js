@@ -15,5 +15,6 @@ const usuarioDesconectado = async(uid = '') => {
 }
 
 module.exports  = {
-    usuarioConectado
+    usuarioConectado,
+    usuarioDesconectado
 }
