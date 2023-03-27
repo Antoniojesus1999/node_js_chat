@@ -11,6 +11,19 @@ io.on('connection', client => {
 
     //Cliente autenticado
     usuarioConectado(uid);
+    console.log('udi ->' + uid );
+    client.join(uid);
+
+    //escuchar del cliente el mensaje-personal
+    client.on('mensaje-personal',(payload) =>{
+        console.log('para -> ' + payload.para);
+        io.to(payload.para).emit('mensaje-personal',payload)
+    });
+
+   
+
+
+
 
     if(!valido){return client.disconnect();}
     
